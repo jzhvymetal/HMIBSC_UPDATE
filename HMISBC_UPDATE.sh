@@ -22,10 +22,10 @@
 
 ####################################################################
 #####Everything Past this point can be copied and pasted to SSH#####
-####################################################################
-
-###To Use this script run the following
+#####                   OR                                    ######
+#####Execute Use this script run the following                ######
 #curl -L https://raw.githubusercontent.com/jzhvymetal/HMISBC_UPDATE/main/HMISBC_UPDATE.sh | sh -x
+####################################################################
 
 ###Update Tar required for nodeJS package manager
 mv /bin/tar /bin/tar.orginal

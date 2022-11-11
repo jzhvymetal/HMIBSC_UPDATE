@@ -1,4 +1,29 @@
 #! /bin/bash
+
+####Fisrt Login#### 
+####login: root password:IIoTB#r8
+####NodeRed Password:NodeRed#0123
+
+###NodeRed URL:https://IP:1880/
+###Nodered username:NR_account
+
+####How To Enable root login over SSH
+########1. vi  /etc/ssh/sshd_config
+########2. press insert key
+########3. change PermitRootLogin no -> PermitRootLogin yes
+########4. ESC ESC :wq 
+####GET IP ADDRESS
+########5. ifconfig
+########6. reboot
+
+########Download a SSH Client use IP from step 5.####################
+########https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+########https://mobaxterm.mobatek.net/
+
+####################################################################
+#####Everything Past this point can be copied and pasted to SSH#####
+####################################################################
+
 ###To Use this script run the following
 #curl -L https://raw.githubusercontent.com/jzhvymetal/HMISBC_UPDATE/main/HMISBC_UPDATE.sh | sh -x
 

@@ -1,4 +1,6 @@
 #! /bin/bash
+###To Use this script run the following
+#curl -L https://raw.githubusercontent.com/jzhvymetal/HMISBC_UPDATE/main/HMISBC_UPDATE.sh | sh -x
 
 ###Update Tar required for nodeJS package manager
 mv /bin/tar /bin/tar.orginal
@@ -30,4 +32,3 @@ npm install --g --unsafe-perm -f --no-package-lock node-red
 ln -s /home/root/n/bin/* /usr/bin
 ##start nodered service
 systemctl start nodered
-

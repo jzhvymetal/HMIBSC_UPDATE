@@ -61,5 +61,16 @@ systemctl stop nodered
 npm install --g --unsafe-perm -f --no-package-lock node-red
 ##install symbolic links so service does not need modification
 ln -s /home/root/n/bin/* /usr/bin
+
+##Install Other NodeRed Nodes
+#Uncomment to install other nodes
+#npm install --no-audit --no-update-notifier --no-fund --save --save-prefix=~ --production --engine-strict node-red-contrib-modbus
+
+#npm install se-node-red-palette_manager --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+#npm install se-node-red-modbus --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+#npm install se-node-red-machine_advisor --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+#npm install se-node-red-harmony_hub --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+#npm install se-node-red-aveva_insight --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+
 ##start nodered service
 systemctl start nodered

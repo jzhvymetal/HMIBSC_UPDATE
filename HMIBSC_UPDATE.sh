@@ -32,6 +32,12 @@ mv /bin/tar /bin/tar.orginal
 curl -L -o /bin/tar 'https://github.com/polaco1782/linux-static-binaries/raw/master/armv8-aarch64/tar'  
 chmod 777 /bin/tar
 
+###Install Missing argparse.py
+curl -L -o argparse-1.2.1.tar.gz 'https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/argparse/argparse-1.2.1.tar.gz'
+tar -xvf argparse-1.2.1.tar.gz argparse-1.2.1/argparse.py --strip-components 1 
+mv argparse.py /usr/lib/python2.7
+rm argparse-1.2.1.tar.gz
+
 ###Back up old NodeJs 
 mkdir -p /home/node_backup/usr/bin 
 mv /usr/bin/*node* /home/node_backup/usr/bin 

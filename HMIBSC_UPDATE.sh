@@ -29,7 +29,7 @@
 
 ###Update Tar required for nodeJS package manager
 mv /bin/tar /bin/tar.orginal
-curl -L -o /bin/tar 'https://github.com/polaco1782/linux-static-binaries/raw/master/armv8-aarch64/tar'  
+curl -L -o /bin/tar 'https://github.com/jzhvymetal/HMIBSC_UPDATE/blob/main/tar?raw=true'  
 chmod 777 /bin/tar
 
 ###Install Missing argparse.py

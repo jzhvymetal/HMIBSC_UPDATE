@@ -33,10 +33,10 @@ curl -L -o /bin/tar 'https://github.com/polaco1782/linux-static-binaries/raw/mas
 chmod 777 /bin/tar
 
 ###Install Missing argparse.py
-curl -L -o argparse-1.2.1.tar.gz 'https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/argparse/argparse-1.2.1.tar.gz'
-tar -xvf argparse-1.2.1.tar.gz argparse-1.2.1/argparse.py --strip-components 1 
+curl -L -o argparse-1.4.0.tar.gz 'https://files.pythonhosted.org/packages/18/dd/e617cfc3f6210ae183374cd9f6a26b20514bbb5a792af97949c5aacddf0f/argparse-1.4.0.tar.gz'
+tar -xvf argparse-1.4.0.tar.gz argparse-1.4.0/argparse.py --strip-components 1 
 mv argparse.py /usr/lib/python2.7
-rm argparse-1.2.1.tar.gz
+rm argparse-1.4.0.tar.gz
 
 ###Back up old NodeJs 
 mkdir -p /home/node_backup/usr/bin 

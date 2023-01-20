@@ -43,10 +43,14 @@
 ########https://mobaxterm.mobatek.net/
 
 ####################################################################
-#####Everything Past this point can be copied and pasted to SSH#####
-#####                   OR                                    ######
-#####Execute Use this script run the following                ######
-#curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_UPDATE_ENTWARE.sh | sh -x
+##### Everything Past this point can be copied and pasted to SSH#####
+#####                    OR                                    ######
+##### Execute Use this script run the following                ######
+# curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_UPDATE_ENTWARE.sh | sh -x
+### Also possible to pass parameters to install nodes
+### For NodeJS node use -n
+### For SE Node use -s
+# curl -L  https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_UPDATE_ENTWARE.sh | sh -s -- -n node-red-contrib-modbus -s se-node-red-palette_manager -s se-node-red-modbus -s se-node-red-machine_advisor -s se-node-red-harmony_hub -s se-node-red-aveva_insight
 ####################################################################
 
 ###Install Entware Package Addon
@@ -105,11 +109,21 @@ ln -s /opt/bin/tar /bin/tar
 
 ####Install additional Nodes....Uncomment any below or add some
 #npm install -g --no-audit --no-update-notifier --no-fund --save --save-prefix=~ --production --engine-strict node-red-contrib-modbus
-#npm install -g se-node-red-palette_manager --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
-#npm install -g se-node-red-modbus --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
-#npm install -g se-node-red-machine_advisor --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
-#npm install -g se-node-red-harmony_hub --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
-#npm install -g se-node-red-aveva_insight --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+
+####Install additional CLI passed nodes
+### For NodeJS node use -n
+### For SE Node use -s
+while getopts "s:n:" opt
+do
+   case "$opt" in
+      n )   echo "Installing NodeJS Node:" "$OPTARG" 
+            npm install -g --no-audit --no-update-notifier --no-fund --save --save-prefix=~ --production --engine-strict "$OPTARG" 
+            ;;
+      s )   echo "Installing SE Node:" "$OPTARG" 
+            npm install -g --strict-ssl false --registry https://ecostruxure-data-expert-essential.se.app:4873/ "$OPTARG" 
+            ;;
+   esac
+done
 
 ##start nodered service
 systemctl start nodered

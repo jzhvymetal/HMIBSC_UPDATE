@@ -47,7 +47,7 @@
 #####                    OR                                    ######
 ##### Execute Use this script run the following                ######
 # curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_UPDATE_ENTWARE.sh | sh -x
-### Also possible to pass parameters to install nodes
+### Also possible to pass parameters to install nodes and opkg packages
 ### For NodeJS node use -n
 ### For SE Node use -s
 ### For opkg packages use -o
@@ -110,7 +110,7 @@ ln -s /opt/bin/tar /bin/tar
 ####Install additional Nodes....Uncomment any below or add some
 #npm install -g --no-audit --no-update-notifier --no-fund --save --save-prefix=~ --production --engine-strict node-red-contrib-modbus
 
-####Install additional CLI passed nodes
+####Install additional CLI passed nodes and opkg packages
 ### For NodeJS node use -n
 ### For SE Node use -s
 ### For opkg packages use -o

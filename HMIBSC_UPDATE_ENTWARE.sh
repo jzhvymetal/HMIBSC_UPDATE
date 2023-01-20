@@ -55,15 +55,15 @@ chmod +x generic.sh
 ./generic.sh
 rm generic.sh
 
-###Set /opt/bin Path in current sh shell
-[[ "$PATH" == *:/opt/bin* ]] || PATH=$PATH:/opt/bin
-##Add path to sh PATH
-grep -qxF 'PATH=$PATH:/opt/bin' /etc/profile || echo 'PATH=$PATH:/opt/bin' >> /etc/profile
-
 ###Set /opt/sbin Path in current sh shell
-[[ "$PATH" == *:/opt/sbin* ]] || PATH=$PATH:/opt/sbin
+[[ "$PATH" == */opt/sbin* ]] || export PATH=/opt/sbin:$PATH
 ##Add path to sh PATH
-grep -qxF 'PATH=$PATH:/opt/sbin' /etc/profile || echo 'PATH=$PATH:/opt/sbin' >> /etc/profile
+grep -qxF 'PATH=/opt/sbin:$PATH' /etc/profile || echo 'PATH=/opt/sbin:$PATH' >> /etc/profile
+
+###Set /opt/bin Path in current sh shell
+[[ "$PATH" == */opt/bin* ]] || export PATH=/opt/bin:$PATH
+##Add path to sh PATH
+grep -qxF 'PATH=/opt/bin:$PATH' /etc/profile || echo 'PATH=/opt/bin:$PATH' >> /etc/profile
 
 ###Backup old opkg so new entware opkg is used.  Do only once if script is run again
 test ! -f /usr/bin/opkg-old && mv /usr/bin/opkg /usr/bin/opkg-old

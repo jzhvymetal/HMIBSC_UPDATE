@@ -50,7 +50,8 @@
 ### Also possible to pass parameters to install nodes
 ### For NodeJS node use -n
 ### For SE Node use -s
-# curl -L  https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_UPDATE_ENTWARE.sh | sh -s -- -n node-red-contrib-modbus -s se-node-red-palette_manager -s se-node-red-modbus -s se-node-red-machine_advisor -s se-node-red-harmony_hub -s se-node-red-aveva_insight
+### For opkg packages use -o
+# curl -L  https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_UPDATE_ENTWARE.sh | sh -s -- -o nano -n node-red-contrib-modbus -s se-node-red-palette_manager -s se-node-red-modbus -s se-node-red-machine_advisor -s se-node-red-harmony_hub -s se-node-red-aveva_insight
 ####################################################################
 
 ###Install Entware Package Addon
@@ -84,13 +85,12 @@ rm /usr/bin/npx
 rm /usr/bin/node-red
 rm /usr/bin/node-red-pi
 
-###Install Entware updated NodeJs/NPM/Python/Tar....Also installs nano because vi is pain to use
+###Install Entware updated NodeJs/NPM/Python/Tar
 ###Add any additional 2500+ packages which can be found https://bin.entware.net/armv7sf-k3.2/Packages.html
 opkg install node
 opkg install node-npm
 opkg install python3
 opkg install tar
-opkg install nano
 
 ##stop nodered service
 systemctl stop nodered
@@ -113,7 +113,8 @@ ln -s /opt/bin/tar /bin/tar
 ####Install additional CLI passed nodes
 ### For NodeJS node use -n
 ### For SE Node use -s
-while getopts "s:n:" opt
+### For opkg packages use -o
+while getopts "s:n:o:" opt
 do
    case "$opt" in
       n )   echo "Installing NodeJS Node:" "$OPTARG" 
@@ -121,6 +122,9 @@ do
             ;;
       s )   echo "Installing SE Node:" "$OPTARG" 
             npm install -g --strict-ssl false --registry https://ecostruxure-data-expert-essential.se.app:4873/ "$OPTARG" 
+            ;;
+      o )   echo "Installing OPKG package:" "$OPTARG" 
+            opkg install "$OPTARG" 
             ;;
    esac
 done

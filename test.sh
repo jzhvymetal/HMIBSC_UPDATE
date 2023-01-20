@@ -1,8 +1,8 @@
 #! /bin/bash
-while getopts "se:nj:" opt
+while getopts "s:n:" opt
 do
    case "$opt" in
-      nj ) echo NodeJS "$OPTARG" ;;
-      se ) echo SE NODE"$OPTARG" ;;
+      n ) echo NodeJS "$OPTARG" ;;
+      s ) echo SE NODE"$OPTARG" ;;
    esac
 done

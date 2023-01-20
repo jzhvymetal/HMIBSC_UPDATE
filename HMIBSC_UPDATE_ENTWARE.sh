@@ -53,6 +53,7 @@
 wget http://bin.entware.net/aarch64-k3.10/installer/generic.sh
 chmod +x generic.sh
 ./generic.sh
+rm generic.sh
 
 ###Set /opt/bin Path in current sh shell
 [[ "$PATH" == *:/opt/bin* ]] || PATH=$PATH:/opt/bin
@@ -64,11 +65,11 @@ grep -qxF 'PATH=$PATH:/opt/bin' /etc/profile || echo 'PATH=$PATH:/opt/bin' >> /e
 ##Add path to sh PATH
 grep -qxF 'PATH=$PATH:/opt/sbin' /etc/profile || echo 'PATH=$PATH:/opt/sbin' >> /etc/profile
 
-###Backup old opkg so new entware opkg is used
-mv /usr/bin/opkg /usr/bin/opkg-old
+###Backup old opkg so new entware opkg is used.  Do only once if script is run again
+test ! -f /usr/bin/opkg-old && mv /usr/bin/opkg /usr/bin/opkg-old
 
 ###Remove All Old NodeJs/NPM/NodeRed Installs
-mv /bin/tar /bin/tar.orginal
+test ! -f /bin/tar.orginal && mv /bin/tar /bin/tar.orginal
 opkg-old remove nodejs --force-removal-of-dependent-packages
 opkg-old remove nodejs-dev --force-removal-of-dependent-packages
 opkg-old remove nodejs-npm  --force-removal-of-dependent-packages

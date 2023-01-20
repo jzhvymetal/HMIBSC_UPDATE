@@ -1,3 +1,7 @@
 #! /bin/bash
-echo "First arg: $1"
-echo "Second arg: $2"
+while getopts "n:" opt
+do
+   case "$opt" in
+      n ) echo "$OPTARG" ;;
+   esac
+done

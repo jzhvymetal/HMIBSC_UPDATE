@@ -1,5 +1,5 @@
 #! /bin/bash
-### This script updates HMISBC NodeJs/NodeRed using ENTWARE packages. 
+### This script updates HMIBSC NodeJs/NodeRed using ENTWARE packages. 
 ### It uninstalls the old NodeJS/NodeRed from the orginal image.  
 ### Then it installs from ENTWARE Nodejs, Pyton3, Tar, and Nano. 
 ###

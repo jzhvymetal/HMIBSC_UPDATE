@@ -1,7 +1,8 @@
 #! /bin/bash
 ### This script updates HMIBSC NodeJs/NodeRed using ENTWARE packages. 
 ### It uninstalls the old NodeJS/NodeRed from the orginal image.  
-### Then it installs from ENTWARE Nodejs, Pyton3, Tar, and Nano. 
+### Then it installs from ENTWARE update versions of the following: 
+### Nodejs, NodeRed, Pyton3, Tar 
 ###
 ### Entware is a software repository for embedded devices 
 ### which use the Linux kernel, primarily routers and network 

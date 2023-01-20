@@ -111,5 +111,5 @@ ln -s /opt/bin/tar /bin/tar
 #npm install -g se-node-red-harmony_hub --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
 #npm install -g se-node-red-aveva_insight --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
 
-##stop nodered service
-systemctl stop nodered
+##start nodered service
+systemctl start nodered

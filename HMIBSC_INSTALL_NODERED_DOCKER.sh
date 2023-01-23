@@ -23,9 +23,9 @@ curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_I
 #####
 ###After Install of the Docker active NodeRed can be switch with the following: 
 ##### Use Native OS NodeRed
-curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_USE_NODERED.sh | sh -x -- -o
+curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_USE_NODERED.sh | sh -s -- -u OS
 ##### Use Docker NodeRed
-curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_USE_NODERED.sh | sh -x -- -d
+curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_USE_NODERED.sh | sh -s -- -u DOCKER
 ####################################################################
 
 INFO_COMMENTS

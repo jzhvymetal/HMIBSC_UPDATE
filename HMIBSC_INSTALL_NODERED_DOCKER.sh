@@ -1,7 +1,7 @@
 #! /bin/bash
 <<INFO_COMMENTS
 This script will install NodeRed Docker Headless and use SE current settings and flow.
-It requires docker already to be preinstalled.  It will install the latest version
+It will install docker if not installed.  It will install the latest version
 of NodeRed and restart at boot.  This also disables the native OS NodeRed. 
 
 More information can be found here and also the summarized below:
@@ -29,6 +29,14 @@ curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_U
 ####################################################################
 
 INFO_COMMENTS
+
+if [[ $(which docker) && $(docker --version) ]]; then
+    echo "Update docker"
+    # command
+  else
+    echo "Install docker"
+    # command
+fi
 
 ##stop OS nodered service
 systemctl stop nodered

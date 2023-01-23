@@ -1,6 +1,6 @@
 #! /bin/bash
 <<INFO_COMMENTS
-This script will install NodeRed Docker Headless and use SE current settings and flow.
+This script will install on HMIBSBC NodeRed Docker Headless and use SE current settings and flow.
 It will install docker if not installed.  It will install the latest version
 of NodeRed and restart at boot.  This also disables the native OS NodeRed. 
 

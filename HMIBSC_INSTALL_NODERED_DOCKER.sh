@@ -19,12 +19,13 @@ docker exec -it mynodered /bin/bash
 
 ####################################################################
 ##### Everything Past this point can be copied and pasted to SSH#####
-#####                    OR                                    ######
 curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_INSTALL_NODERED_DOCKER.sh | sh -x
-##### Disable use native OS Nodred execute the following
-curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_USE_NODERED.sh | sh -x -- -u OS
-##### Enable use native OS Nodred execute the following
-curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_USE_NODERED.sh | sh -x -- -u DOCKER
+#####
+###After Install of the Docker active NodeRed can be switch with the following: 
+##### Use Native OS NodeRed
+curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_USE_NODERED.sh | sh -x -- -o
+##### Use Docker NodeRed
+curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_USE_NODERED.sh | sh -x -- -d
 ####################################################################
 
 INFO_COMMENTS

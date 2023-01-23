@@ -1,0 +1,46 @@
+########################################################################################
+########Change files in root disk image of recover SD card using Ubuntu
+sudo apt-get install simg2img
+sudo simg2img rootfs.org.img rootfs.ext4
+sudo mkdir /tmp/mnt
+sudo mount -o loop,rw,sync rootfs.ext4 /tmp/mnt
+##Make changes with image mounted Linux.  Example shown below. 
+
+##Start SSH with root access
+sudo -s
+if [ -f /lib/systemd/system/sshd.socket ]; then
+   sudo ln -s /lib/systemd/system/sshd.socket /tmp/mnt/etc/systemd/system/sockets.target.wants/sshd.socket
+ else
+   sudo echo '' > /lib/systemd/system/sshd.socket
+   sudo ln -s /lib/systemd/system/sshd.socket /tmp/mnt/etc/systemd/system/sockets.target.wants/sshd.socket	
+   sudo rm -f /lib/systemd/system/sshd.socket	
+fi
+sudo sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /tmp/mnt/etc/ssh/sshd_config
+exit
+
+sudo umount /tmp/mnt
+sudo img2simg rootfs.ext4 rootfs.img
+########################################################################################
+
+########Location of boot up script
+/etc/profile.d/force_root_pwd.sh
+
+########NodeRed Setting files
+/home/root/.node-red/
+
+####How to start/stop/resart/enable disable service
+systemctl start docker.service
+systemctl stop docker.service
+systemctl enable docker.service
+systemctl disable docker.service
+
+####View log of a service
+systemctl status docker.service
+journalctl -xu docker.service
+
+###Install SE Nodes
+npm install se-node-red-palette_manager --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+npm install se-node-red-modbus --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+npm install se-node-red-machine_advisor --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+npm install se-node-red-harmony_hub --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false
+npm install se-node-red-aveva_insight --registry https://ecostruxure-data-expert-essential.se.app:4873/ --strict-ssl false

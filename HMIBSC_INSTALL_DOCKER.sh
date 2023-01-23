@@ -3,8 +3,8 @@
 
 The script installs Docker on HMIBSC.  It does not require anything
 preinstalled and can be run with or without ENTWARE.
-It does not install any docker containers.  In the comments are
-additonal commands that can be executed to install NodeRed Docker 
+It does not install any docker containers.  In the comments of the script
+are additonal commands that can be executed to install NodeRed Docker 
 and disable the native NodeRed installation.
 
 ####Fisrt Login#### 

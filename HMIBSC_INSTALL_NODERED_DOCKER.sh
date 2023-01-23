@@ -31,11 +31,11 @@ curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_U
 INFO_COMMENTS
 
 if [[ $(which docker) && $(docker --version) ]]; then
-    echo "Update docker"
+    echo "Docker is installed"
     # command
   else
-    echo "Install docker"
-    # command
+    echo "Installing Docker"
+    curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_INSTALL_DOCKER.sh | sh -x
 fi
 
 ##stop OS nodered service

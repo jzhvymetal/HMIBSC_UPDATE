@@ -22,6 +22,12 @@ sudo umount /tmp/mnt
 sudo img2simg rootfs.ext4 rootfs.img
 ########################################################################################
 
+Install/Update Native OS NodeRed using Entware
+curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_UPDATE_ENTWARE.sh | sh -x
+
+Install Docker NodeRed with existing SE settings and flow
+curl -L https://raw.githubusercontent.com/jzhvymetal/HMIBSC_UPDATE/main/HMIBSC_INSTALL_NODERED_DOCKER.sh | sh -x
+
 ########Location of boot up script
 /etc/profile.d/force_root_pwd.sh
 

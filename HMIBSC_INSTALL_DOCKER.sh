@@ -50,7 +50,7 @@ mv docker/* /usr/bin/
 rm -r docker
 rm docker-20.10.9.tgz 
 #Add docker usergroup and root user
-groupadd dock
+groupadd docker
 usermod -aG docker $USER
 newgrp docker 
 #download containerd service file.  Modify it as loction of binary is different

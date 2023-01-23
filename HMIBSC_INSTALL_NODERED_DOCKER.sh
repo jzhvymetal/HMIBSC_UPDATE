@@ -1,8 +1,8 @@
 #! /bin/bash
 <<INFO_COMMENTS
 This script will install on HMIBSBC NodeRed Docker Headless and use SE current settings and flow.
-It will install docker if not installed.  It will install the latest version
-of NodeRed and restart at boot.  This also disables the native OS NodeRed. 
+It will install docker if not installed.  Nothing is required to be preinstalled on the native HMIBSC image.
+It will install the latest version of NodeRed Docker which will restart at boot.  This also disables the native OS NodeRed
 
 More information can be found here and also the summarized below:
 https://nodered.org/docs/getting-started/docker
